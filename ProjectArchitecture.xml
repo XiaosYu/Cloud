@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Architecture>
+	<Projects>
+		<Project Name="Cloud.EntityFramework">
+			<Classes>
+				<Class Name="DbContext" IsAbstract="true"/>
+				<Class Name="DbSet" IsAbstract="true"/>
+			</Classes>
+			<References>
+				<Reference Name="Mircrosoft.EntityFrameworkCore" Version="7.0.1"/>
+			</References>
+		</Project>
+	</Projects>
+</Architecture>

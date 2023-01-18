@@ -1,0 +1,9 @@
+﻿@page "/"
+@namespace Cloud.World.Server.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Cloud.World.Shared
+@{
+    Layout = "_Layout";
+}
+
+<component type="typeof(App)" render-mode="ServerPrerendered" />

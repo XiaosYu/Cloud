@@ -1,0 +1,100 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "DB_CloudWorldContext",
+   "ContextNamespace": "Database",
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": "Database",
+   "OutputContextPath": "Database",
+   "OutputPath": "Database",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Cloud.World.Shared",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[TB_Account]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_Annex]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_Class]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_CourseSelection]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_File]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_FileType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_Global]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_Log]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_Notice]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_Project]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_Subject]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TB_User]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[V_Annex]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[V_Submit]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[V_User]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[V_Work]",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": "10_0_16_17.DB_CloudWorldTest",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

@@ -1,0 +1,70 @@
+﻿@page "/"
+@attribute [TabItemOption(Text = "Index", Closable = false)]
+<PageTitle>Index</PageTitle>
+
+<GroupBox Title="文件上传">
+    <ButtonUpload TValue="string" OnChange="OnSaveFile" IsMultiple="true" ShowLabel="false" ShowUploadFileList="false" />
+   
+    @if (Submits.Count == 0)
+    {
+                <Empty Image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg" Width="133" Text="暂无数据" />
+    }
+    else
+    {
+                <div class="row row-cols-4 g-2">
+            @foreach (var item in Submits)
+            {
+                            <div class="col">
+                                <Card IsCenter="true" IsShadow="true">
+                                    <BodyTemplate>
+                                        <div class="row row-cols-1 g-2">
+                                            <div class="col">
+                                                <FileIcon Extension="@item.Ftype" />
+                                            </div>
+                                            <div class="col">
+                                                <PopConfirmButton IsOutline="true" Placement="Placement.Top" Color="Color.Danger" ConfirmIcon="fa-solid fa-triangle-exclamation text-danger" ConfirmButtonColor="Color.Danger" Text="删除" Content="确定删除数据吗？" />
+                                                <Button IsOutline="true" Color="Color.Info" Text="恢复" />
+                                            </div>
+                                      </div>
+                                        <br />
+                                        <p>@item.Fname</p>
+                                    </BodyTemplate>
+                                </Card>
+                            </div>
+            }
+                </div>
+    }
+</GroupBox>
+
+
+
+
+
+@code
+{
+    [Inject]
+    public UserData data { set; get; }
+
+    public string Value { set; get; } = string.Empty;
+
+    public List<VSubmit> Submits { set; get; } = new List<VSubmit>();
+
+    private int Process { set; get; } = 100;
+
+    private async Task OnSaveFile(UploadFile file)
+    {
+        VSubmit submit = new VSubmit()
+            {
+                Fname = file.OriginFileName,
+                Size = (int)file.Size,
+                Ftype = Path.GetExtension(file.OriginFileName)
+            };
+        Submits.Add(submit);
+        StateHasChanged();
+    
+    }
+
+
+
+  
+}

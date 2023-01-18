@@ -1,0 +1,62 @@
+﻿
+<Modal @ref="ModalFile" IsKeyboard="true">
+    <ModalDialog >
+        <BodyTemplate>
+            <FileViewer @ref="FileViewer" StyleString="padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);border: var(--bs-card-border-width) solid var(--bs-card-border-color);" />
+        </BodyTemplate>   
+    </ModalDialog>
+</Modal>
+
+<Modal @ref="ModalPdf" IsKeyboard="true">
+    <ModalDialog>
+        <BodyTemplate>
+            <PdfReader @ref="PdfReader" StreamMode="true" Filename="@FilePath"/>
+        </BodyTemplate>
+    </ModalDialog>
+</Modal>
+
+
+<Modal @ref="ModalImage" IsKeyboard="true">
+    <ModalDialog>
+        <BodyTemplate>
+            <ImageViewer Url="@FilePath" FitMode="ObjectFitMode.Contain" />
+        </BodyTemplate>
+    </ModalDialog>
+</Modal>
+
+
+@code {
+    private Modal? ModalFile{ set; get; }
+    private Modal? ModalPdf{ set; get; }
+    private Modal? ModalImage{ set; get; }
+
+    private Stream? FileStream{ set; get; }
+    private string? FilePath { set; get; }
+
+    private FileViewer? FileViewer { get; set; }
+    private PdfReader? PdfReader{ get; set; }
+
+    public async Task Display(string path)
+    {
+        if(path.Contains(".pdf"))
+        {
+            FilePath = path;
+
+            await PdfReader!.Refresh();
+            await ModalPdf!.Show();
+        }
+        else if(path.Contains(".docx"))
+        {
+            await FileViewer!.Reload(path);
+            await ModalFile!.Show();
+        }
+        else
+        {
+            FilePath = $"/api/Static/LoadImage?path={path}";
+            StateHasChanged();
+            await ModalImage!.Show();
+        }
+
+    }
+
+}

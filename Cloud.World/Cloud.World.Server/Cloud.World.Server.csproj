@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BootstrapBlazor.Middleware" Version="7.0.0" />
+    <PackageReference Include="BootstrapBlazor.PdfReader" Version="7.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cloud.World.WebApi\Cloud.World.WebApi.csproj" />
+    <ProjectReference Include="..\Cloud.World.Shared\Cloud.World.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

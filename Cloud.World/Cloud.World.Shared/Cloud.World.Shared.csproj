@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Locales\*.json" />
+    <EmbeddedResource Include="Locales\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BootstrapBlazor" Version="7.*" />
+    <PackageReference Include="BootstrapBlazor.FileViewer" Version="7.0.1" />
+    <PackageReference Include="BootstrapBlazor.Middleware" Version="7.0.0" />
+    <PackageReference Include="BootstrapBlazor.PdfReader" Version="7.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Cloud.EntityFramework\Cloud.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\Cloud.Office\Cloud.Office.csproj" />
+    <ProjectReference Include="..\..\Cloud.Utility\Cloud.Utility.csproj" />
+  </ItemGroup>
+
+</Project>
